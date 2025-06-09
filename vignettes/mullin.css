@@ -168,6 +168,13 @@ dd.thebibliography { text-indent: -2em; margin-left: 2em;}
 dd.thebibliography p:first-child{ text-indent: -2em; }
 dt.thebibliography{float:left; clear:left; margin-right:1em;}
 /* end css.sty */
+
+  @font-face {
+    font-family: Alegreya;
+    font-weight: 400;
+    src: url('https://fonts.gstatic.com/s/alegreya/v35/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNG9hUI-aCisSGVrw.woff2') format('woff2')
+  }
+
   body {
     margin: 2em auto;
     max-width: 60ch;
@@ -204,6 +211,9 @@ dt.thebibliography{float:left; clear:left; margin-right:1em;}
     font-weight: normal;
   }
 
+                                                                  
+
+                                                                  
   a {
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -211,9 +221,6 @@ dt.thebibliography{float:left; clear:left; margin-right:1em;}
     -ms-word-break: break-all;
     word-break: break-word;
 
-                                                                  
-
-                                                                  
     -ms-hyphens: auto;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
