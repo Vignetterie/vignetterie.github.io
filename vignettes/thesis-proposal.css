@@ -22,26 +22,17 @@ thesis-proposal.css from thesis-proposal.tex (TeX4ht) */
 .ec-lmtt-10{ font-family: monospace,monospace;}
 .ec-lmtt-10{ font-family: monospace,monospace;}
 .ec-lmtt-10{ font-family: monospace,monospace;}
-.ec-lmtt-10{ font-family: monospace,monospace;}
-.ec-lmri-10{ font-style:italic;}
+.ec-lmcsc-10{ font-variant: small-caps;}
+.ec-lmcsc-10{ font-variant: small-caps;}
+.ec-lmcsc-10{ font-variant: small-caps;}
+.ec-lmcsc-10{ font-variant: small-caps;}
+.ec-lmcsc-10{ font-variant: small-caps;}
 .ec-lmri-10{ font-style:italic;}
 .ec-lmri-10{ font-style:italic;}
 .ec-lmri-10{ font-style:italic;}
 .ec-lmri-10{ font-style:italic;}
 .ec-lmri-10{ font-style:italic;}
 .ec-lmr-9{font-size:90%;}
-.ec-lmcsc-10{ font-variant: small-caps;}
-.ec-lmcsc-10{ font-variant: small-caps;}
-.ec-lmcsc-10{ font-variant: small-caps;}
-.ec-lmcsc-10{ font-variant: small-caps;}
-.ec-lmcsc-10{ font-variant: small-caps;}
-.ec-lmcsc-10{ font-variant: small-caps;}
-.ec-lmcsc-10x-x-90{font-size:90%; font-variant: small-caps;}
-.ec-lmcsc-10x-x-90{ font-variant: small-caps;}
-.ec-lmcsc-10x-x-90{ font-variant: small-caps;}
-.ec-lmcsc-10x-x-90{ font-variant: small-caps;}
-.ec-lmcsc-10x-x-90{ font-variant: small-caps;}
-.ec-lmcsc-10x-x-90{ font-variant: small-caps;}
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
 p + p{margin-top:1em;}
