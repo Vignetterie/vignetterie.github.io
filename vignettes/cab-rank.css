@@ -1,4 +1,5 @@
-/* cab-rank.css from cab-rank.tex (TeX4ht) */
+/* cab-rank.css
+from cab-rank.tex (TeX4ht) */
 /* start css.sty */
 .ec-lmtt-10{ font-family: monospace,monospace;}
 .ec-lmtt-10{ font-family: monospace,monospace;}
@@ -194,10 +195,10 @@ dt.thebibliography{float:left; clear:left; margin-right:1em;}
     -ms-word-break: break-all;
     word-break: break-word;
 
-    -ms-hyphens: auto;
                                                                   
 
                                                                   
+    -ms-hyphens: auto;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
