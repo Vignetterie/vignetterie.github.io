@@ -1,5 +1,5 @@
-/*
-thesis-proposal.css from thesis-proposal.tex (TeX4ht) */
+/* thesis-proposal.css
+from thesis-proposal.tex (TeX4ht) */
 /* start css.sty */
 .cmbsy-10{font-weight: bold;}
 .cmbsy-10{font-weight: bold;}
@@ -214,10 +214,10 @@ dt.thebibliography{float:left; clear:left; margin-right:1em;}
     text-align: left;
     font-weight: normal;
   }
-
                                                                   
 
                                                                   
+
   a {
     overflow-wrap: break-word;
     word-wrap: break-word;
