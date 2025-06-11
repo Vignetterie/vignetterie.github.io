@@ -1,3 +1,5 @@
+/* css.sty */
+
 @font-face {
 	font-family: Alegreya;
 	font-weight: 400;
@@ -54,14 +56,17 @@ a {
 
 	color: #606060;
 	text-decoration: none;
+
+	white-space: normal;
 }
 
 
-a::after {
+a[href]:not([href=""]):not(:empty)::after {
 	position: relative;
 	content: "°";
 	top: -0.10em;
 	color: #008080;
+	white-space: nowrap;
 }
 
 
@@ -69,5 +74,8 @@ header {
 	padding: 0em 0em 1em 0em;
 }
 
-
-/* css.sty */
+.nowidth {
+	width: 0em;
+	display: inline-block;
+	text-indent: 0em;
+}
