@@ -240,10 +240,10 @@ a {
 a[href]:not([href=""]):not(:empty)::after {
   position: relative;
   content: "°";
-  top: -0.10em;
   color: #008080;
   white-space: nowrap;
 }
+
 
 
 header {
@@ -252,6 +252,12 @@ header {
 
 .nowidth {
   width: 0em;
+  display: inline-block;
+  text-indent: 0em;
+}
+
+.postitalicnowidth {
+  width: 0.2em;
   display: inline-block;
   text-indent: 0em;
 }
