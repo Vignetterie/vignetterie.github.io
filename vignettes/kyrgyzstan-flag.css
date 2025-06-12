@@ -266,4 +266,9 @@ header {
   text-indent: 0em;
 }
 
+.plainlist {
+  list-style: none;
+  padding-left: 0;
+}
+
 

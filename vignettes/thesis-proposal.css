@@ -234,6 +234,8 @@ a {
   text-decoration: none;
 
   white-space: normal;
+
+  padding-right: 1pt;
 }
 
 
@@ -242,9 +244,12 @@ a[href]:not([href=""]):not(:empty)::after {
   content: "°";
   color: #008080;
   white-space: nowrap;
+  display: inline;
 }
 
-
+.nobr {
+  white-space: nowrap;
+}
 
 header {
   padding: 0em 0em 1em 0em;
@@ -258,8 +263,16 @@ header {
 
 .postitalicnowidth {
   width: 0.2em;
+                                                                  
+
+                                                                  
   display: inline-block;
   text-indent: 0em;
+}
+
+.plainlist {
+  list-style: none;
+  padding-left: 0;
 }
 
 
