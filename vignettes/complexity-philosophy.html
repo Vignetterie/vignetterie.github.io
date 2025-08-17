@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Computational complexity and philosophy</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/><link href="complexity-philosophy.css" rel="stylesheet" type="text/css"/></head>
+<body>
+<header>
+<h2><a href="../index.html">La Vignetterie<span class="nowidth">.</span></a></h2>
+</header>
+<main>
+<h1>Computational complexity and philosophy</h1>
+<!-- l. 8 --><p class="noindent">What might computational complexity have to do with philosophy? This is a
+write-up of my usual (informal) explanation at parties to people who have no
+knowledge of computational complexity.
+</p><!-- l. 10 --><p class="indent">   In short: philosophical theories often require a notion of the <span class="ec-lmri-10">difficulty </span>of an
+information-processing task, and computational complexity is a well-developed
+measure of such difficulty. Unfortunately, many existing philosophical appeals to
+complexity theory have abstracted away from details of individual cases that turn out
+to be quite important.
+
+</p>
+<h3 class="likesectionHead" id="philosophy-and-difficulty"><a id="x1-1000"></a>Philosophy and difficulty.</h3>
+<!-- l. 13 --><p class="noindent">In philosophy and allied disciplines, questions about the difficulty of reasoning and
+other forms of information processing often arise. I don’t propose here to
+demonstrate any exciting philosophical claims, but rather to show that what I hope
+are fairly plausible philosophical arguments lead us to the question: how hard is
+such-and-such a task? </p>
+<ul class="itemize1">
+<li class="itemize">
+<!-- l. 15 --><p class="noindent"><span class="ec-lmri-10">Right and wrong. </span>It’s uncontroversial that knowledge and ignorance have
+at least some significance to questions of right and wrong. But what is
+that significance?
+</p>
+<!-- l. 17 --><p class="noindent">Consider: I slam open a door, ignorant that someone is behind it, and
+knock them over.
+</p>
+<!-- l. 19 --><p class="noindent">A  straightforward,  if  clearly  wrong,  principle  is  that  ignorance  is  a
+complete excuse: a person who does something ignorant of a fact, who
+would not have done it had they known that fact, thereby does no wrong.
+To return to the case above, if the door is in a crowded public place, I
+ought to have opened the door slowly and looked—even though I wouldn’t
+have slammed the door open had I known someone was outside.</p>
+<!-- l. 21 --><p class="noindent">So it seems it is important to ask how reasonable it is to expect knowledge
+rather than ignorance. Had the door been to my own bedroom, it wouldn’t
+have been reasonable to expect me to have checked.
+</p>
+<!-- l. 23 --><p class="noindent">Sometimes, we are ignorant of facts because it would be impossible to
+know any better. In cases more analogous to moral decisions we routinely
+have to make, however, it would be difficult (perhaps too difficult) to
+know any better, rather than impossible. Suppose a parent must choose
+between two medical procedures that haven’t been scientifically compared
+in detail, and, through bad luck, chooses one that happens to be worse. In
+principle, it might not be impossible to determine which is better. But, at
+least for the purposes of attributing blame, the parent has not obviously
+done something wrong.
+</p>
+</li>
+<li class="itemize"><span class="ec-lmri-10">Rationality. </span>A roughly analogous line of argument applies to philosophical
+investigation of rationality. Some philosophers are interested in <span class="ec-lmri-10">practically
+achievable </span>notions of rationality, which must take into account our limited
+cognitive resources. Some forms of reasoning are easier than others, and
+therefore can be expected to be undertaken by any rational agent.
+</li>
+<li class="itemize">
+<!-- l. 28 --><p class="noindent"><span class="ec-lmri-10">Cognition. </span>We process information through various cognitive processes:
+perception,  inference,  language  processing,  and  so  on.  From  auditory
+inputs  we  come  to  awareness  of  sentences  uttered  by  others;  from
+knowledge of some facts we come to know other facts (e.g. if either A or B
+is the case, when we come to know that A isn’t the case, we typically infer
+B); and from rays of light in the retina, we apprehend ordinary objects
+(tables, chairs) before us.
+</p>
+<!-- l. 30 --><p class="noindent">Philosophers  (and  others)  often  interested  in  how  we  carry  out  such
+information-processing, in investigating the nature of the mind. A natural,
+if inchoate, view is that theories that suggest we undertake very difficult
+forms of information processing should be treated with suspicion. Consider
+a (quite incredible) theory that says: (1) we retain a record of all utterances
+we ever hear, and (2) our competent use of language involves exhaustively
+searching these past utterances: e.g., in determining whether a sentence is
+grammatical, we exhaustively search for a similar sentence we have heard
+before. To retain such a record would be very difficult, and we might
+suspect that this is not, on those grounds, a very likely theory.
+</p>
+<!-- l. 32 --><p class="noindent">This is a rather inchoate principle in that (1) it does not tell us how
+suspicious we should be; but, leaving that aside, (2) to apply this principle
+more generally, we need to know what should count as difficult.</p></li></ul><h3 class="likesectionHead" id="computational-complexity"><a id="x1-2000"></a>Computational complexity.</h3>
+<!-- l. 35 --><p class="noindent">Computer science offers one measure of the difficulty of a task: computational
+complexity.
+</p><!-- l. 37 --><p class="indent">   Consider a list containing two numbers. The task is to sort the list in ascending
+order, by repeated use of the following operation: one compares two adjacent
+numbers, and, if they are in the wrong order, one swaps them (let us call these
+‘comparisons’). How many comparisons do we need to sort this list of two elements?
+Obviously: one.
+</p><!-- l. 39 --><p class="indent">   Suppose that the list contains three elements. How many comparisons do we need
+to sort the list? One comparison isn’t enough: it doesn’t allow us to even consider
+one of the numbers. What about two comparisons? If we are lucky, two comparisons
+might work: to <span class="ec-lmri-10">verify </span>that the list [1,2,3] is sorted, we only need to note that 1 &lt; 2,
+and 2 &lt; 3. But two comparisons will not, in fact, suffice. Every time we
+make a comparison, there are at most two possibilities as to what we do
+(either we swap the numbers or we don’t). With two comparisons, there are
+therefore four possibilities as to the order in which we put the initial elements.
+But there are <span class="ec-lmri-10">six </span>possible correct orders (3 × 2 × 1). So we need <span class="ec-lmri-10">three</span>
+comparisons.
+</p><!-- l. 41 --><p class="indent">   What if we don’t know how many elements there are in the list? Suppose that there
+are <!-- l. 41 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>n</mi></mrow></math>
+elements; there could be five, or a hundred, or a million. How many comparisons, in
+terms of <!-- l. 41 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>n</mi></mrow></math>,
+do we need? A very pessimistic answer would be:
+<!-- l. 41 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>.
+That would mean that the number of comparisons would double every
+time we add a number to the list. A very optimistic answer would be:
+<!-- l. 41 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn><mi>n</mi></mrow></math>. That
+would mean that the additional number of comparisons needed from adding an element
+to the list would be fixed. That is the sort of question that <span class="ec-lmri-10">computational complexity</span>
+answers. A classic result in complexity theory is that to sort a list requires fewer than
+<!-- l. 41 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math> but more than
+<!-- l. 41 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn><mi>n</mi></mrow></math> comparisons: rather,
+they take (roughly) <!-- l. 41 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>n</mi><mi class="loglike">log</mi><mo>⁡<!-- FUNCTION APPLICATION --></mo><!-- nolimits --><mi>n</mi></mrow></math>
+(<a id="x1-2001"></a><a id="page.5"></a><a href="complexity-philosophy.html#X0-hoare1962"><span class="ec-lmcsc-10">Hoare</span></a>).
+</p><!-- l. 45 --><p class="indent">   Complexity theory does not only concern lists; it considers the difficulty of problems, in
+general, in terms of their <span class="ec-lmri-10">size</span>. For example: what’s the shortest route that visits each of
+<!-- l. 45 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>n</mi></mrow></math> cities at least
+once? Given <!-- l. 45 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>n</mi></mrow></math>
+statements, are they contradictory?
+</p><!-- l. 47 --><p class="indent">   In these terms, what counts as easy? The answer is typically <span class="ec-lmri-10">polynomial time</span>.
+What does that mean? A <span class="ec-lmri-10">polynomial-time </span>algorithm that solves a problem of size
+<!-- l. 47 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>n</mi></mrow></math> in polynomial
+time solves it in <!-- l. 47 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mi>n</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow></math>
+steps, where <!-- l. 47 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>c</mi></mrow></math>
+is an arbitrary but <span class="ec-lmri-10">fixed </span>number. List-processing algorithms that take<!-- l. 47 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mi>n</mi></mrow><mrow><mn>5</mn></mrow></msup><mo class="MathClass-punc" stretchy="false">,</mo><mn>2</mn><mi>n</mi> <mo class="MathClass-bin" stretchy="false">+</mo> <mn>7</mn><mo class="MathClass-punc" stretchy="false">,</mo><mi>n</mi> <mo class="MathClass-bin" stretchy="false">+</mo> <mi class="loglike">log</mi><mo>⁡<!-- FUNCTION APPLICATION --></mo><!-- nolimits --><mi>n</mi><mo class="MathClass-punc" stretchy="false">,</mo></mrow></math> and
+<!-- l. 47 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math>
+comparisons to finish take polynomial time. If they take
+<!-- l. 47 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>
+comparisons, they don’t.
+</p><!-- l. 49 --><p class="indent">   Polynomial time is very mathematically elegant. A natural worry from the
+foregoing is: when should we consider an operation to really be a single operation,
+and when should we consider it really to be several distinct operations? If I sort
+cards with numbers on them into a single list, I might look at three cards at
+the same time, rather than the two that the model above required. The
+problems that can be solved in polynomial time do not change when we make
+seemingly reasonable changes to the model like this. (I think that, unnoticed, a
+<a href="https://vignetterie.org/vignettes/invariance.html">philosopher</a> was the first to formulate something like this view.) Polynomial time
+therefore seems a fairly reasonable way to answer the question: what counts as
+difficult?
+
+</p>
+<h3 class="likesectionHead" id="applications"><a id="x1-3000"></a>Applications.</h3>
+<!-- l. 52 --><p class="noindent">Although philosophers are usually more familiar with logic and probability than
+complexity theory, some philosophical work has appealed to it. (See <a id="x1-3001"></a><a id="x1-3002"></a><a id="x1-3003"></a><a id="x1-3004"></a><a id="page.6"></a><a href="complexity-philosophy.html#X0-aaronson2013"><span class="ec-lmcsc-10">Aaronson</span><span class="postitalicnowidth">,</span></a>
+<a href="complexity-philosophy.html#X0-szymanik2018"><span class="ec-lmcsc-10">Szymanik </span>and <span class="ec-lmcsc-10">Verbrugge</span><span class="postitalicnowidth">,</span></a> <a href="complexity-philosophy.html#X0-vanrooij2019">van <span class="ec-lmcsc-10">Rooij </span>et al<span class="nowidth">.</span></a> and <a href="complexity-philosophy.html#X0-dean2021"><span class="ec-lmcsc-10">Dean</span></a> for surveys.) Here’re some
+examples. </p>
+<ul class="itemize1">
+<li class="itemize"><a id="x1-3005"></a><a href="complexity-philosophy.html#X0-stenseke2024"><span class="ec-lmcsc-10">Stenseke</span></a>:  most  moral  systems  require  us  to  solve  computationally
+intractable problems. Complexity theory therefore shows that the best
+we can feasibly achieve will be quite far from what these moral systems
+prescribe in principle.
+</li>
+<li class="itemize"><a id="x1-3006"></a><a href="complexity-philosophy.html#X0-levesque1988"><span class="ec-lmcsc-10">Levesque</span></a>: classical logic cannot yield good models of human reasoning,
+because  it  is  too  complexity-theoretically  difficult  in  which  to  reason.
+But  modified  logical  systems  might  yield  better  models  that  respect
+complexity-theoretic limits.
+</li>
+<li class="itemize"><a id="x1-3007"></a><a href="complexity-philosophy.html#X0-vanrooij2008">Van  <span class="ec-lmcsc-10">Rooij</span></a> proposes  a  <span class="ec-lmri-10">tractable cognition thesis</span>,  a  standard  to  which
+theories  in  cognitive  science  should  be  held.  Such  theories  should  not
+attribute  to  us  forms  of  information  processing  that  take  longer  than
+polynomial time (roughly).</li>
+<li class="itemize"><a id="x1-3008"></a><a id="page.7"></a><a href="complexity-philosophy.html#X0-ristad1993"><span class="ec-lmcsc-10">Ristad</span></a> (§ 6.3) argues that the forms of cognition required for competent
+use of language are complexity-theoretically difficult. The central question
+in studying language should not, therefore, be why we make <span class="ec-lmri-10">mistakes</span>,
+but how we manage to produce broadly correct output in the first place.
+This undermines the (contested) distinction in linguistics and philosophy
+of  language  between  idealised  language  (competence)  and  our  actual
+linguistic output, that contains mistakes (performance).
+</li>
+<li class="itemize"><a href="https://vignetterie.org/vignettes/thesis-proposal.html">Some Chomskyans</a> argue that complexity theory shows that we must have
+innate knowledge of language, since learning it without innate knowledge
+would be too complexity-theoretically difficult.</li></ul>
+<h3 class="likesectionHead" id="some-objections"><a id="x1-4000"></a>Some objections.</h3>
+<!-- l. 62 --><p class="noindent">Here are two natural worries about the identifiation of complexity-theoretic classes
+(e.g. polynomial time) with what is feasible or practicable. </p>
+<ul class="itemize1">
+<li class="itemize">Can’t polynomial functions turn out to be very large (e.g. <!-- l. 64 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mi>n</mi></mrow><mrow><mn>2000</mn></mrow></msup></mrow></math>—larger
+than many reasonable exponential functions on even medium-sized inputs?
+And, similarly, can’t exponential functions turn out to be quite reasonable
+(e.g. <!-- l. 64 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mo class="MathClass-punc" stretchy="false">.</mo><msup><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>
+rather than <!-- l. 64 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>)
+on reasonably sized medium inputs?
+</li>
+<li class="itemize">Complexity  theory  concerns  the  difficulty  of  problems  with  respect  to
+inputs of unbounded size. But some problems typically have inputs of
+bounded size, so complexity theory erroneously gives significance to overly
+large cases.</li></ul>
+<!-- l. 68 --><p class="indent">   In the case of computers, much of this objection has in practice been misplaced.
+Most polynomial algorithms we’ve encountered have ultimately been reasonable
+(<!-- l. 68 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mi>n</mi></mrow><mrow><mn>3</mn></mrow></msup></mrow></math>, let’s say,
+rather than <!-- l. 68 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mi>n</mi></mrow><mrow><mn>1000</mn></mrow></msup></mrow></math>).
+And due to improvements in computing power, what were once unrealistically large
+inputs are now comonplace (<a id="x1-4001"></a><a href="complexity-philosophy.html#X0-moore1965"><span class="ec-lmcsc-10">Moore</span></a>). However, some exponential-time algorithms
+really are used in practice on medium-sized inputs.</p><!-- l. 70 --><p class="indent">   These responses are less satisfactory in the human case. Humans often are
+confronted with problems of fairly bounded size. Consider visual processing of retinal
+input into ordinary objects. It doesn’t seem that we have substantially <span class="ec-lmri-10">more </span>retinal
+input than our ancestors a thousand or million years ago did. Nor is it clear that we
+need to resolve these inputs into substantially more objects. In the case of a
+computer, we are generally justified in assuming that it’s likely that we’ll eventually
+want to process inputs of, say, double the existing size. Such a rule doesn’t seem to
+apply to the human case.
+</p><!-- l. 72 --><p class="indent"> <a id="x1-4002"></a><a id="page.8"></a><a href="complexity-philosophy.html#X0-vanrooij2019">van <span class="ec-lmcsc-10">Rooij </span>et al<span class="nowidth">.</span></a> (5 ff) argue by example that anything worse than polynomial
+time will restrict us to really rather small inputs. The examples they give are
+<!-- l. 72 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math> and
+<!-- l. 72 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>n</mi><mo class="MathClass-punc" stretchy="false">!</mo></mrow></math>.
+In the examples they give, inputs become unreasonably large from about
+<!-- l. 72 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>n</mi> <mo class="MathClass-rel" stretchy="false">=</mo> <mn>5</mn></mrow></math> to
+<!-- l. 72 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>n</mi> <mo class="MathClass-rel" stretchy="false">=</mo> <mn>20</mn></mrow></math>.
+There are a few problems with this argument. </p>
+<ul class="itemize1">
+<li class="itemize">It is possible to take longer than polynomial time without taking exponential
+or factorial time. For example, <!-- l. 74 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mi>n</mi></mrow><mrow><mi class="loglike">log</mi><mo>⁡<!-- FUNCTION APPLICATION --></mo><!-- nolimits --><mi>n</mi></mrow></msup></mrow></math>
+is far more forgiving than <!-- l. 74 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>.
+</li>
+<li class="itemize"><!-- l. 75 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>
+is not a very helpful example. The best known algorithm for one important
+problem (Boolean satisfiability) takes <!-- l. 75 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1.30</mn><msup><mrow><mn>7</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>
+time (<a id="x1-4003"></a><a href="complexity-philosophy.html#X0-hansen2019"><span class="ec-lmcsc-10">Hansen </span>et al<span class="nowidth">.</span></a>).</li></ul>
+<!-- l. 78 --><p class="indent"> <a href="complexity-philosophy.html#X0-vanrooij2019">van <span class="ec-lmcsc-10">Rooij </span>et al<span class="nowidth">.</span></a> (§ 9.9) agree that ‘if the input size is small’, complexity-theoretic
+considerations are irrelevant; but they suggest that in practice, ‘for many cognitive
+capacities the size of the input as a whole is not small’. This suggests that ‘small’
+has some fixed meaning in different cases.
+</p><!-- l. 80 --><p class="indent">   That is where I think their approach fails. Rather, complexity theory can show,
+on a case-by-case basis, that given </p>
+<ul class="itemize1">
+<li class="itemize">certain computational resources, and
+</li>
+<li class="itemize">the complexity of a certian problem</li></ul>
+<!-- l. 85 --><p class="noindent">there will be a bound on feasible input sizes. This applies to polynomial
+functions—indeed, all complexity classes. For some machine learning datasets,<!-- l. 85 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> is prohibitively large.
+<!-- l. 85 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1.30</mn><msup><mrow><mn>7</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math> is prohibitively large in
+much smaller cases; and <!-- l. 85 --><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>
+for cases yet smaller.
+</p><!-- l. 87 --><p class="indent">   The attractiveness of identifying polynomial time with feasibility is that this
+standard is mathematically simple to use. It allows us to abstract away from specific
+details of the model of computation involved in a particular cognitive capacity, since
+these don’t affect whether a problem takes polynomial time. Unfortunately,
+the price of this mathematical convenience is accuracy. Complexity theory
+may be useful to philosophy, but only by close examination of individual
+cases.
+</p>
+<dl class="thebibliography"><dt class="thebibliography" id="X0-aaronson2013">
+</dt><dd class="thebibliography" id="bib-1">
+<!-- l. 88 --><p class="noindent"><a id="page.9"></a><a href="complexity-philosophy.html" id="X0-"></a><span class="ec-lmcsc-10">Aaronson</span>, Scott<a href="http://dx.doi.org/10.7551/mitpress/8009.003.0011">, ‘Why Philosophers Should Care about Computational
+Complexity’<span class="nowidth">,</span></a> <span class="ec-lmri-10">Computability</span>, ed. by B. Jack <span class="ec-lmcsc-10">Copeland</span>, Carl J. <span class="ec-lmcsc-10">Posy </span>and
+Oron <span class="ec-lmcsc-10">Shagrir</span>, The MIT Press, 2013, 261–328.
+</p>
+</dd>
+<dt class="thebibliography" id="X0-dean2021">
+</dt><dd class="thebibliography" id="bib-2">
+<!-- l. 88 --><p class="noindent"><span class="ec-lmcsc-10">Dean</span>,   Walter<a href="https://plato.stanford.edu/archives/fall2021/entries/computational-complexity/">,   ‘Computational   Complexity   Theory’<span class="nowidth">,</span></a> <span class="ec-lmri-10">The  Stanford
+Encyclopedia of Philosophy</span>, ed. by Edward N. <span class="ec-lmcsc-10">Zalta</span>, Fall 2021, Metaphysics
+Research Lab, Stanford University, 2021.
+</p>
+</dd>
+<dt class="thebibliography" id="X0-hansen2019">
+</dt><dd class="thebibliography" id="bib-3">
+<!-- l. 88 --><p class="noindent"><span class="ec-lmcsc-10">Hansen</span>,  Thomas  Dueholm  et  al.<a href="http://dx.doi.org/10.1145/3313276.3316359">,  ‘Faster  k-SAT  algorithms  using
+biased-PPSZ’<span class="nowidth">,</span></a> <span class="ec-lmri-10">Proceedings of the 51st Annual ACM SIGACT Symposium
+on Theory of Computing</span>, STOC 2019, New York, NY, USA: Association for
+Computing Machinery, 2019, 578–589.
+</p>
+</dd>
+<dt class="thebibliography" id="X0-hoare1962">
+</dt><dd class="thebibliography" id="bib-4">
+<!-- l. 88 --><p class="noindent"><span class="ec-lmcsc-10">Hoare</span>, C.A.R.<a href="http://dx.doi.org/10.1093/comjnl/5.1.10">, ‘Quicksort’<span class="nowidth">,</span></a> <span class="ec-lmri-10">The Computer Journal </span>5.1 (1962), 10–16.
+</p>
+</dd>
+<dt class="thebibliography" id="X0-levesque1988">
+</dt><dd class="thebibliography" id="bib-5">
+<!-- l. 88 --><p class="noindent"><span class="ec-lmcsc-10">Levesque</span>, Hector J.<a href="https://www.jstor.org/stable/30227050">, ‘Logic and the Complexity of Reasoning’<span class="nowidth">,</span></a> <span class="ec-lmri-10">Journal of
+Philosophical Logic </span>17.4 (1988), 355–389.
+</p>
+</dd>
+<dt class="thebibliography" id="X0-moore1965">
+</dt><dd class="thebibliography" id="bib-6">
+<!-- l. 88 --><p class="noindent"><span class="ec-lmcsc-10">Moore</span>, Gordon E, ‘Cramming more components onto integrated circuits’,
+<span class="ec-lmri-10">Electronics </span>38.8 (1965).
+</p>
+</dd>
+<dt class="thebibliography" id="X0-ristad1993">
+</dt><dd class="thebibliography" id="bib-7">
+<!-- l. 88 --><p class="noindent"><span class="ec-lmcsc-10">Ristad</span>, Eric Sven<a href="https://openlibrary.org/search?q=978-0-262-18147-1">, <span class="ec-lmri-10">The language complexity game</span><span class="postitalicnowidth">,</span></a> Artificial intelligence
+series, Cambridge (MA), London: MIT Press, 1993.
+</p>
+</dd>
+<dt class="thebibliography" id="X0-stenseke2024">
+</dt><dd class="thebibliography" id="bib-8"><!-- l. 88 --><p class="noindent"><span class="ec-lmcsc-10">Stenseke</span>,  Jakob<a href="http://dx.doi.org/10.1007/s10462-024-10732-3">,  ‘On  the  computational  complexity  of  ethics:  moral
+tractability  for  minds  and  machines’<span class="nowidth">,</span></a> <span class="ec-lmri-10">Artificial Intelligence Review  </span>57.4
+(2024).
+</p>
+</dd>
+<dt class="thebibliography" id="X0-szymanik2018">
+</dt><dd class="thebibliography" id="bib-9">
+<!-- l. 88 --><p class="noindent"><span class="ec-lmcsc-10">Szymanik</span>,   Jakub   and   Rineke   <span class="ec-lmcsc-10">Verbrugge</span><a href="https://openlibrary.org/search?q=978-1-315-64367-0">,   ‘Tractability   and   the
+computational mind’<span class="nowidth">,</span></a> <span class="ec-lmri-10">The Routledge Handbook of the Computational Mind</span>,
+Routledge, 2018.
+</p>
+</dd>
+<dt class="thebibliography" id="X0-vanrooij2008">
+</dt><dd class="thebibliography" id="bib-10">
+<!-- l. 88 --><p class="noindent">Van <span class="ec-lmcsc-10">Rooij</span>, Iris<a href="http://dx.doi.org/10.1080/03640210801897856">, ‘The Tractable Cognition Thesis’<span class="nowidth">,</span></a> <span class="ec-lmri-10">Cognitive Science </span>32.6
+(2008), 939–984.
+</p>
+</dd>
+<dt class="thebibliography" id="X0-vanrooij2019">
+</dt><dd class="thebibliography" id="bib-11">
+<!-- l. 88 --><p class="noindent">Van <span class="ec-lmcsc-10">Rooij</span>, Iris et al.<a href="http://dx.doi.org/10.1017/9781107358331">, <span class="ec-lmri-10">Cognition and Intractability: A Guide to Classical
+and Parameterized Complexity Analysis</span><span class="postitalicnowidth">,</span></a> Cambridge: Cambridge University
+Press, 2019.</p></dd></dl><h2>À propos.</h2>
+<h3>Étiquettes.</h3>
+<p><a href="../etiquettes/computational-complexity.html">computational complexity<span class="nowidth">,</span></a> <a href="../etiquettes/philo.html">philo<span class="nowidth">,</span></a> <a href="../etiquettes/en-cours.html">en cours<span class="nowidth">.</span></a></p>
+<h3>Mises à jour.</h3>
+<ul class="plainlist">
+<li>J.P. Loo (17 août 2025): Second draft (complexity/philo)</li>
+<li>J.P. Loo (17 août 2025): Copying an old first draft (philo and complexity).</li>
+</ul>
+</main>
+</body>
+</html>
