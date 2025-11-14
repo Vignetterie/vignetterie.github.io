@@ -163,10 +163,21 @@ figcaption.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-al
 figcaption.caption span.id{font-weight: bold; white-space: nowrap; }
 p + figcaption, img + figcaption{margin-top: 1em;}
 .abstract{margin:1em;}
+dl.enumerate-enumitem{display:grid; grid-template-columns: 3ch 1fr; align-items: top; row-gap:1ch;}
 dt.printshorthands{float:left; clear:left; margin-right:1em;}
 dd.thebibliography { text-indent: -2em; margin-left: 2em;}
 dd.thebibliography p:first-child{ text-indent: -2em; }
 dt.thebibliography{float:left; clear:left; margin-right:1em;}
+.partHead { font-size: 1.4em; font-weight: bold; }
+.chapterHead { font-size: 1.2em; font-weight: bold; }
+.sectionHead { font-size: 1.1em; font-weight: bold; }
+.subsectionHead { font-size: 1.05em; font-style: italic; }
+.subsubsectionHead { font-size: 1em; font-style: italic; }
+.likepartHead { font-size: 1.4em; font-weight: bold; }
+.likechapterHead { font-size: 1.2em; font-weight: bold; }
+.likesectionHead { font-size: 1.1em; font-weight: bold; }
+.likesubsectionHead { font-size: 1.05em; font-style: italic; }
+.likesubsubsectionHead { font-size: 1em; font-style: italic; }
 /* end css.sty */
 
 @font-face {
